@@ -1,0 +1,294 @@
+a {
+
+    font-weight: bold;
+
+    margin-left: -1rem;
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/465ab10b-d24f-4d78-98eb-f94db71fbdbd/lebron-19-basketbol-ayakkab%C4%B1s%C4%B1-Tshbtg.png');
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    //overflow: hidden;
+}
+
+.navbar-brand {
+    color: black;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 5.5%;
+
+    span {
+        color: red;
+    }
+
+
+
+}
+
+
+nav {
+    transform: translateX(0);
+
+    position: absolute;
+    margin-right: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+
+
+    ul {
+        display: flex;
+        margin: 0;
+
+        a {
+            color: white;
+            padding: .5em 1.5em;
+            font-size: .9rem;
+
+            &:hover {
+                background: none;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+h1 {
+    color: black;
+    font-size: 3rem;
+    margin-top: auto;
+    margin-bottom: 250px;
+    margin-left: 1.6em;
+
+}
+
+.subhead {
+    color: black;
+    margin-top: auto;
+    font-size: 1.4rem;
+    margin-left: 5rem;
+
+
+
+}
+
+section.hero {
+
+    height: 100vh;
+
+
+    .down-arrow {
+        stroke: black;
+        position: absolute;
+        margin-left: 4.3rem;
+        bottom: 1em;
+        width: 1em;
+        animation: moveArrow 1s alternate-reverse infinite;
+
+        path {
+            fill: black;
+        }
+    }
+}
+
+.more-info {
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 11em;
+
+        margin: auto;
+    }
+
+    .title {
+
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        line-height: 1.5rem;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 680px) {
+
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+@media only screen and (min-width: 920px) {
+
+    .menu {
+        display: none;
+        color: black;
+    }
+
+    nav {
+
+        position: relative;
+        display: inline-flex;
+
+        right: 0;
+        top: 0;
+
+        background: none;
+        height: 0vh;
+        width: 40%;
+        z-index: 999;
+        text-transform: uppercase;
+        transform: translateX(100%);
+        transition: transform .5s ease-in-out;
+
+
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 8em;
+
+            a {
+                color: black;
+                padding: .5em 1.5em;
+                font-size: .9rem;
+
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+
+
+    section.hero {
+        color: white;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+        .subhead {
+            margin-bottom: 3em;
+        }
+
+        svg.down-arrow {
+            stroke: black;
+            position: unset;
+
+            path {
+                fill: black;
+            }
+        }
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+
+        img {
+            width: 25em;
+        }
+
+        .content {
+            text-align: right;
+            width: 25em;
+        }
+    }
+
+    .feature.left {
+        grid-template-areas:
+            "left right";
+
+        img {
+            grid-area: left;
+        }
+
+        .content {
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        gap: 0;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px)
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
